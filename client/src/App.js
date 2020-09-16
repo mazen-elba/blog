@@ -1,6 +1,31 @@
 import React from "react";
-import "./App.css";
+import Navigation from "./components/common/navigation";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
+import PageRenderer from "./page-renderer";
 
-export default function App() {
-  return <div className="app"></div>;
+function App() {
+  const user = {
+    firstName: "Mazen",
+    lastName: "Abdelbasir",
+  };
+
+  return (
+    <Router>
+      <div className="app">
+        <Navigation user={user} />
+        <Switch>
+          <Route path="/:page" component={PageRenderer} />
+          <Route path="/" render={() => <Redirect to="/home" />} />
+          <Route component={() => 404} />
+        </Switch>
+      </div>
+    </Router>
+  );
 }
+
+export default App;
