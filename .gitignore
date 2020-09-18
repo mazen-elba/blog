@@ -65,3 +65,5 @@ server/django-env/
 .pytest_cache
 
 package-lock.json
+
+/graphblog/
