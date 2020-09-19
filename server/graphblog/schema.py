@@ -4,12 +4,14 @@ import graphql_jwt
 import links.schema
 import users.schema
 import links.schema_relay
+import blog.schema
 
 
 class Query(
     users.schema.Query,
     links.schema.Query,
     links.schema_relay.RelayQuery,
+    blog.schema.Query,
     graphene.ObjectType,
 ):    # fetches data from server
     pass

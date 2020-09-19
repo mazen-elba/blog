@@ -50,7 +50,7 @@ class Query(graphene.ObjectType):
         # return Link.objects.filter(filter)
         return qs
 
-        return Link.objects.all()
+        # return Link.objects.all()
 
     def resolve_votes(self, info, **kwargs):
         return Vote.objects.all()
